@@ -69,7 +69,7 @@ resource "aws_autoscaling_group" "bastion" {
   }
 
   tag {
-    key                 = "Name"
+    key                 = "name"
     value               = "${var.name_prefix}-bastion"
     propagate_at_launch = true
   }
@@ -143,7 +143,7 @@ resource "aws_security_group" "bastion" {
 
   tags = merge(
     {
-      "Name" = "${var.name_prefix}-bastion-ssh"
+      "name" = "${var.name_prefix}-bastion-ssh"
     },
     var.tags
   )
